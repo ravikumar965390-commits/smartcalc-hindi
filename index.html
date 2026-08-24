@@ -835,7 +835,23 @@ card.classList.add('hidden');
 }
 
 </script>
+<div class="calculator">
+  <h2>GST Calculator</h2>
+  <input type="number" id="gstAmount" placeholder="Amount">
+  <input type="number" id="gstRate" placeholder="GST %">
+  <button onclick="calculateGST()">Calculate GST</button>
+  <p id="gstResult"></p>
+</div>
 
+<script>
+function calculateGST() {
+  const amount = Number(document.getElementById("gstAmount").value);
+  const rate = Number(document.getElementById("gstRate").value);
+  const gst = amount * rate / 100;
+  document.getElementById("gstResult").textContent =
+    "GST: ₹" + gst.toFixed(2) + " | Total: ₹" + (amount + gst).toFixed(2);
+}
+</script>
 </body>
      <!-- jo tumhara purana code hai -->
 
